@@ -39,7 +39,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, Order> implements IO
     public Order getOrderById(Integer id) {
         Order order = orderDao.selectById(id);
 
-        String url = "http://localhost:80/users/" + order.getId();
+        String url = "http://userservice/users/" + order.getId();
         R r = restTemplate.getForObject(url, R.class);
 //        order.setUser(r);
 
